@@ -1,0 +1,125 @@
+body {
+  background: #f8f8f8;
+  font-size: 14px;
+  font-family: Verdana, sans-serif;
+  margin: 0;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* 全てのp要素に行間を指定 */
+p {
+  line-height: 2;
+}
+
+body > section {
+  padding: 60px 0;
+}
+
+/* 奇数番目のセクションタイトルだけ背景色を白くする */
+body > section:nth-of-type(odd) {
+  background: #fff;
+}
+
+.section-title {
+  text-align: center;
+  font-weight: normal;
+  margin: 0 0 60px;
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: normal;
+}
+
+/* 最初は非表示 */
+#menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, .9);
+  color: #fff;
+  display: none;
+}
+
+/* クリックするとメニューが表示される */
+#menu.shown {
+  display: block;
+}
+
+#menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px 20px;
+}
+
+#menu li {
+  line-height: 2;
+}
+
+#menu a {
+  text-decoration: none;
+  /* 親要素の色を引き継ぐinherit */
+  color: inherit;
+}
+
+#open_menu {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#close_menu {
+  padding: 15px;
+  float: right;
+  cursor: pointer;
+}
+
+.feature img {
+  width: 100%;
+}
+
+/* 最後の子要素だけpadding-bottomを指定しない */
+/* 擬似要素を指定 */
+.feature:not(:last-child) {
+  margin-bottom: 60px;
+}
+
+.news-item img {
+  width: 100%;
+}
+
+.how-to-use iframe {
+  /* 絶対配置の指定 */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* 16:9の計算
+100% : x% = 16 : 9
+x% = 9 * 100% / 16 = 56.25%
+*/
+.how-to-use .iframe-wrapper {
+  /* background: pink; */
+  /* 親領域（containar）
+  の幅に対しての割合*/
+  /* 4:1割合*/
+  /* padding-bottom: 25%; */
+  padding-bottom: 56.25%;
+  height: 0;
+  position: relative;
+}
+
+footer {
+  text-align: center;
+  color: #ccc;
+  padding: 60px 0;
+}
