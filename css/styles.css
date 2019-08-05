@@ -94,6 +94,10 @@ header h1 {
   width: 100%;
 }
 
+.news-item:not(:last-child) {
+  margin-bottom: 60px;
+}
+
 .how-to-use iframe {
   /* 絶対配置の指定 */
   position: absolute;
@@ -122,4 +126,82 @@ footer {
   text-align: center;
   color: #ccc;
   padding: 60px 0;
+}
+
+/* medium screens */
+@media (min-width: 570px) {
+
+  .feature img {
+    width: 50%;
+  }
+
+  .feature p {
+    width: 45%;
+  }
+
+  /* 奇数番目はpを右に配置する */
+  .feature:nth-of-type(odd) p {
+    float: right;
+    /* 余った5%の余白を左側につける */
+    padding-left: 5%;
+  }
+
+  /* 偶数番目はpを左に配置する */
+  .feature:nth-of-type(even) p {
+    float: left;
+    /* 余った5%の余白を左側につける */
+    padding-right: 5%;
+  }
+
+  /* floatを親要素で解除する */
+  .feature {
+    overflow: hidden;
+  }
+
+  /* newsitemをflexで３カラムにする */
+  .news .flex {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .news-item {
+    width: 30%;
+  }
+
+}
+
+/* large screens */
+@media (min-width: 912px) {
+  /* ディスプレイ画面の幅の固定 */
+  .container {
+    width: 820px;
+  }
+
+  #open_menu {
+    display: none;
+  }
+
+  #close_menu {
+    display: none;
+  }
+
+  #menu {
+    display: block;
+    /* 固定配置を元の規定値に戻す */
+    position: static;
+    /* 背景色を消す */
+    background: transparent;
+    color: #333;
+  }
+
+  #menu ul {
+    padding: 0;
+    float: right;
+  }
+
+  #menu li {
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+  }
 }
